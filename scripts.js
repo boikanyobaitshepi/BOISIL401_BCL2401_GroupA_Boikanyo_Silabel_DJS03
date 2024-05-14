@@ -27,9 +27,11 @@ for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
         </div>
     `
 
+     // Append each preview button to the document fragment
     starting.appendChild(element)
 }
 
+// Append the initial book previews to the document
 document.querySelector('[data-list-items]').appendChild(starting)
 
 const genreHtml = document.createDocumentFragment()
