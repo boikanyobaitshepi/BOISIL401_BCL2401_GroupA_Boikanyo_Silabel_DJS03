@@ -10,9 +10,9 @@ const starting = document.createDocumentFragment()
 
 // Loop through a slice of initial books to create preview elements
 for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
-    const element = document.createElement('button')
-    element.classList = 'preview'
-    element.setAttribute('data-preview', id)
+    const element = document.createElement('button');
+    element.classList = 'preview';
+    element.setAttribute('data-preview', id);
 
       // Populate button element with book information
     element.innerHTML = `
@@ -32,7 +32,7 @@ for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
 }
 
 // Append the initial book previews to the document
-document.querySelector('[data-list-items]').appendChild(starting)
+document.querySelector('[data-list-items]').appendChild(starting);
 
 // Create document fragments for genre and author dropdown options
 const genreHtml = document.createDocumentFragment()
