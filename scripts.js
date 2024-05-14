@@ -8,11 +8,13 @@ let matches = books
 // Create a document fragment for initial book previews
 const starting = document.createDocumentFragment()
 
+// Loop through a slice of initial books to create preview elements
 for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
     const element = document.createElement('button')
     element.classList = 'preview'
     element.setAttribute('data-preview', id)
 
+      // Populate button element with book information
     element.innerHTML = `
         <img
             class="preview__image"
