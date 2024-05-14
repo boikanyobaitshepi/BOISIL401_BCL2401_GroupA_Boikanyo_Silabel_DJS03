@@ -1,9 +1,11 @@
 // Import necessary data and constants
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js'
 
+// Initialize variables for pagination and filtering
 let page = 1;
 let matches = books
 
+// Create a document fragment for initial book previews
 const starting = document.createDocumentFragment()
 
 for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
