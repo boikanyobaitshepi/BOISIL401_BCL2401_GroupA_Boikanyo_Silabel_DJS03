@@ -34,12 +34,14 @@ for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
 // Append the initial book previews to the document
 document.querySelector('[data-list-items]').appendChild(starting)
 
+// Create document fragments for genre and author dropdown options
 const genreHtml = document.createDocumentFragment()
 const firstGenreElement = document.createElement('option')
 firstGenreElement.value = 'any'
 firstGenreElement.innerText = 'All Genres'
 genreHtml.appendChild(firstGenreElement)
 
+// Populate genre dropdown options
 for (const [id, name] of Object.entries(genres)) {
     const element = document.createElement('option')
     element.value = id
