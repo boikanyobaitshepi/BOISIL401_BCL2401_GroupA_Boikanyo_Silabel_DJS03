@@ -1,3 +1,4 @@
+// Import necessary data and constants
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js'
 
 let page = 1;
