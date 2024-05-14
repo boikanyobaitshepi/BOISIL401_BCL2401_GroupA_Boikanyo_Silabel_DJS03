@@ -57,20 +57,24 @@ firstAuthorElement.value = 'any'
 firstAuthorElement.innerText = 'All Authors'
 authorsHtml.appendChild(firstAuthorElement)
 
+// Populate author dropdown options
 for (const [id, name] of Object.entries(authors)) {
     const element = document.createElement('option')
     element.value = id
     element.innerText = name
     authorsHtml.appendChild(element)
 }
-
+// Append genre and author dropdown options to respective elements
 document.querySelector('[data-search-authors]').appendChild(authorsHtml)
 
+// Detect user's preferred color scheme and set theme accordingly
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector('[data-settings-theme]').value = 'night'
     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
     document.documentElement.style.setProperty('--color-light', '10, 10, 20');
 } else {
+    // Light mode
+
     document.querySelector('[data-settings-theme]').value = 'day'
     document.documentElement.style.setProperty('--color-dark', '10, 10, 20');
     document.documentElement.style.setProperty('--color-light', '255, 255, 255');
@@ -234,6 +238,7 @@ document.querySelector('[data-list-items]').addEventListener('click', (event) =>
         }
     }
     
+    // Add event listeners for various UI interactions
     if (active) {
         document.querySelector('[data-list-active]').open = true
         document.querySelector('[data-list-blur]').src = active.image
