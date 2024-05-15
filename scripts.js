@@ -5,6 +5,8 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 let page = 1;
 let matches = books;
 
+const getElement = (selector) => document.querySelector(selector);
+
 // Function to create HTML elements dynamically
 function createHTMLElement(tag, attributes = {}, innerHTML = '') {
   const element = document.createElement(tag);
